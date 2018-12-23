@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    int chislo, cifra, i=0;
+    int cifry[1000];
+    cout<<"Программа удаляет из заданого вами числа заданную вами цифру\n"
+    <<"Введите число: ";
+    cin>>chislo;
+    cout<<"Введите цифру: ";
+    cin>>cifra;
+    while (chislo>0) {
+        cifry[i]=chislo%10;
+        chislo=trunc(chislo/10);
+        i++;
+    }
+    i--;
+    for (;i>=0;i--){
+        if (cifry[i]!=cifra) cout<<cifry[i];
+    }
+    return 0;
+}
